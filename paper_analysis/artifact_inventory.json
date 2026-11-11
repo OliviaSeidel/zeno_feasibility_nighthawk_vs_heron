@@ -1,0 +1,468 @@
+{
+  "package_date": "2026-11-11",
+  "source": "relational-zeno-predictions working-tree snapshot",
+  "source_includes_uncommitted_scientific_updates": true,
+  "exclusions": [
+    "manuscript folders",
+    "private notes and correspondence",
+    "local environments",
+    "git history",
+    "agent instructions",
+    "outdated cleanup inventories"
+  ],
+  "changed_for_packaging": [
+    "Manuscript Markdown links converted to plain text",
+    "HTML reading copies regenerated",
+    "README and package inventory added"
+  ],
+  "notebooks": [
+    {
+      "notebook": "understanding_survival_curves.ipynb",
+      "code_cells": 15,
+      "saved_error_outputs": 0,
+      "all_code_cells_have_execution_counts": true,
+      "code_and_computational_outputs_identical_to_source": true,
+      "last_execution_date": "2026-11-10"
+    },
+    {
+      "notebook": "relational_zeno_analysis.ipynb",
+      "code_cells": 9,
+      "saved_error_outputs": 0,
+      "all_code_cells_have_execution_counts": true,
+      "code_and_computational_outputs_identical_to_source": true,
+      "last_execution_date": "2026-11-10"
+    },
+    {
+      "notebook": "ideal_circuit_verification.ipynb",
+      "code_cells": 12,
+      "saved_error_outputs": 0,
+      "all_code_cells_have_execution_counts": true,
+      "code_and_computational_outputs_identical_to_source": true,
+      "last_execution_date": "2026-11-10"
+    },
+    {
+      "notebook": "memory_parity_robustness.ipynb",
+      "code_cells": 16,
+      "saved_error_outputs": 0,
+      "all_code_cells_have_execution_counts": true,
+      "code_and_computational_outputs_identical_to_source": true,
+      "last_execution_date": "2026-11-11"
+    },
+    {
+      "notebook": "relational_zeno_realistic_predictions.ipynb",
+      "code_cells": 7,
+      "saved_error_outputs": 0,
+      "all_code_cells_have_execution_counts": true,
+      "code_and_computational_outputs_identical_to_source": true,
+      "last_execution_date": "2026-11-10"
+    }
+  ],
+  "relative_markdown_links_checked": 23,
+  "sara_notebook": {
+    "path": "zeno_feasibility_nighthawk_vs_heron_paper_version.ipynb",
+    "sha256": "70a685ee36e7ff2ba873beb6c71831bf5f774959ee8e634f1af4e14cb848fc19",
+    "unchanged": true
+  },
+  "preserved_root_figures": [
+    "Schedule_Ramsey_fringes_vs_delta.png",
+    "differing_drive_strenghts_large_n.png",
+    "drive_strenght_bunching.png",
+    "fig1_relational_zeno_dynamics.pdf",
+    "fig1_relational_zeno_dynamics.png",
+    "fig2_zeno_realistic_scaling.pdf",
+    "fig2_zeno_realistic_scaling.png",
+    "fig3_coherence_budget.pdf",
+    "fig3_coherence_budget.png",
+    "fig4_cumulative_gate_budget.pdf",
+    "fig4_cumulative_gate_budget.png",
+    "fig5_tomography_scaling.pdf",
+    "fig5_tomography_scaling.png",
+    "figure_global_stationarity.png",
+    "figure_relational_zeno.png",
+    "figure_zeno_scaling.png",
+    "visibility_system_Q.png"
+  ],
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 6082,
+      "sha256": "94effd08975b28cac77df484a3966661e51498a996432f58743bd251e4f3673c"
+    },
+    {
+      "path": "Schedule_Ramsey_fringes_vs_delta.png",
+      "bytes": 311412,
+      "sha256": "2da0b621ef8c1a887cd1e2e21447adc171c6de02ea08a2408aa5826aea4fa5f4"
+    },
+    {
+      "path": "differing_drive_strenghts_large_n.png",
+      "bytes": 215726,
+      "sha256": "22bdad9f8e581f0d9d6488c51262d84be1a69408aac0e5ffff1eeb6940b6e18a"
+    },
+    {
+      "path": "drive_strenght_bunching.png",
+      "bytes": 163385,
+      "sha256": "b6656545b036522c00cfe0dacf743598d44c8e2c084501bf372bf8a19dd71c40"
+    },
+    {
+      "path": "fig1_relational_zeno_dynamics.pdf",
+      "bytes": 16841,
+      "sha256": "a15b31164f77a2618ca885335523d16c15a14e1edbce1c27c571a91379973d02"
+    },
+    {
+      "path": "fig1_relational_zeno_dynamics.png",
+      "bytes": 140023,
+      "sha256": "dfcae02f2df59547d779a3b52cbc072d1ca73bee4a70e64ff188c7e8e09a0356"
+    },
+    {
+      "path": "fig2_zeno_realistic_scaling.pdf",
+      "bytes": 18736,
+      "sha256": "e43ebfaaa1472aa6e6bb7531eec5271479fcd397c55089fc2faa4e84da741016"
+    },
+    {
+      "path": "fig2_zeno_realistic_scaling.png",
+      "bytes": 117858,
+      "sha256": "618d216cc9ea35ca7a935e0c19ed8a3a690e093403ae6a6bc6626bdd787b7444"
+    },
+    {
+      "path": "fig3_coherence_budget.pdf",
+      "bytes": 17458,
+      "sha256": "ebb1289032545a4f5f4ef6d224d9e2a0717b2510d883543bfe76aebc2c50f3e5"
+    },
+    {
+      "path": "fig3_coherence_budget.png",
+      "bytes": 101757,
+      "sha256": "4d822fa1cb024bea3b02ad0504d68ef108d4be5c0abe56cb907e61984d461aa4"
+    },
+    {
+      "path": "fig4_cumulative_gate_budget.pdf",
+      "bytes": 17059,
+      "sha256": "6d66808cb69de166b1f50c75b358f8cbafbdef13ebe0ff2c0401e36fcc4dd28f"
+    },
+    {
+      "path": "fig4_cumulative_gate_budget.png",
+      "bytes": 109988,
+      "sha256": "692b288f13689b899008edaa69362b7bcb3b2f4eb1550c186b6afa4f906f911b"
+    },
+    {
+      "path": "fig5_tomography_scaling.pdf",
+      "bytes": 15786,
+      "sha256": "b3a62a59a200f4307cc6ad253770ea33559393094cda99a108ee2ff12a28e6b1"
+    },
+    {
+      "path": "fig5_tomography_scaling.png",
+      "bytes": 96717,
+      "sha256": "1a5340c71db0095911a83cabdb0ecd949a97a8800d66a3ae32ac39fa431c073a"
+    },
+    {
+      "path": "figure_global_stationarity.png",
+      "bytes": 85166,
+      "sha256": "849efa6e1b2a52c0dc6f4a0a0db93937730610a82718cbd51966ad81ae22ce8c"
+    },
+    {
+      "path": "figure_relational_zeno.png",
+      "bytes": 116664,
+      "sha256": "fa2aca5879b04d68ace5ed34b8f0a46d9081ca0afb903cf7e5a19e83f4360a5f"
+    },
+    {
+      "path": "figure_zeno_scaling.png",
+      "bytes": 65110,
+      "sha256": "d39fdf7bc22a39e98d79869012dac8339fb8ca1d9f6fb69688cff33def0a3b27"
+    },
+    {
+      "path": "ideal_circuit_verification.ipynb",
+      "bytes": 256629,
+      "sha256": "0fa9768b0b207dc554102eb41db6888cbe324c7b690e640a8264a9121a75bc4f"
+    },
+    {
+      "path": "memory_parity_robustness.ipynb",
+      "bytes": 478585,
+      "sha256": "653637efa9e3ea2dc5a60770fa23f9cd6ffdd5afc7d75469ae251f0e3b2915d5"
+    },
+    {
+      "path": "outputs/fig2b_saturation/fig2b_N_100.png",
+      "bytes": 109857,
+      "sha256": "30b347e5bae18473d74ce9749f315cb703fd22f5742ab27b7ced8abfe1545d6b"
+    },
+    {
+      "path": "outputs/fig2b_saturation/fig2b_N_100.svg",
+      "bytes": 50357,
+      "sha256": "3f6606a277202c6667f7695660f3d0742082b5493129c49b8e7a079ebe501eb0"
+    },
+    {
+      "path": "outputs/fig2b_saturation/fig2b_N_1000.png",
+      "bytes": 110328,
+      "sha256": "998179d555ea3950931b02c61beb6f5212b2ab2bd1c8ef5fe4ae210d30632784"
+    },
+    {
+      "path": "outputs/fig2b_saturation/fig2b_N_1000.svg",
+      "bytes": 50491,
+      "sha256": "3cdf837c43d0773e72742ffacef0e0558819e5e4f62399c7b379e3f3b6720be3"
+    },
+    {
+      "path": "outputs/fig2b_saturation/fig2b_N_10000.png",
+      "bytes": 110612,
+      "sha256": "4903a53f806792b3c15c28ab5e5029f55aa8e725e929b44f5d42bdd1b40c85cb"
+    },
+    {
+      "path": "outputs/fig2b_saturation/fig2b_N_10000.svg",
+      "bytes": 50576,
+      "sha256": "ceaa283876dd56623f80746f08aca6548e1276a819f113fbf1a40d90e42495d6"
+    },
+    {
+      "path": "outputs/fig2b_saturation/fig2b_N_infinity.png",
+      "bytes": 111085,
+      "sha256": "5d733de68f97dcc53b5390c03efbe01b3fe7851e25f7fe115f0e23d16bccced7"
+    },
+    {
+      "path": "outputs/fig2b_saturation/fig2b_N_infinity.svg",
+      "bytes": 51030,
+      "sha256": "28fcfed3d2eb73c5bb99e47a66ba2f98e84279da25628dd47b074c5fa38c2812"
+    },
+    {
+      "path": "outputs/fig2b_saturation/fig2b_large_N_comparison.png",
+      "bytes": 251284,
+      "sha256": "e956dd13e007510af0d2a32cb1501d0ccb1ad07464998eb807c9b76d710599bf"
+    },
+    {
+      "path": "outputs/fig2b_saturation/fig2b_large_N_comparison.svg",
+      "bytes": 103981,
+      "sha256": "dcc543eb2b07e537cbadf4da88c10f726e10e14c4f7663b1170f0ce9d04af1b4"
+    },
+    {
+      "path": "outputs/ideal_verification/memory_parity.png",
+      "bytes": 90623,
+      "sha256": "bfc40736420bf9d1c2b6770da00f27cafd98fe25e167735db217a953bd3a79af"
+    },
+    {
+      "path": "outputs/ideal_verification/random_cases.csv",
+      "bytes": 362620,
+      "sha256": "af002c8b50e4fe3659427591bf1a5cf9cddbdeeddc0e9d4fa57d72cf671064d6"
+    },
+    {
+      "path": "outputs/ideal_verification/random_verification.png",
+      "bytes": 180568,
+      "sha256": "689911daeb9870c552687cc98b7ff31e879d5f80fc7422d798cb8256beea2ea7"
+    },
+    {
+      "path": "outputs/ideal_verification/verification_summary.json",
+      "bytes": 1361,
+      "sha256": "e8385a69832aa9aa46379ca73eb276f2c0dce4f04ee8bb6c3310b94b0a6f7f02"
+    },
+    {
+      "path": "outputs/memory_robustness/example_noise_sources.csv",
+      "bytes": 715,
+      "sha256": "63b333a5016b1561582f5ad35f1f6223d41d2c6380e534cbf1095d05d1307e1c"
+    },
+    {
+      "path": "outputs/memory_robustness/offset_and_misclassification.csv",
+      "bytes": 9869,
+      "sha256": "6f5150270e637a79e8ec76a5ec70d015e454279d917d94db1a642d49905f29a1"
+    },
+    {
+      "path": "outputs/memory_robustness/parity_coherence_ratio.csv",
+      "bytes": 56123,
+      "sha256": "ff9b4c623401f3e44c34d09cb593d82ba65c3178f11efb97f4323af18b8b5b31"
+    },
+    {
+      "path": "outputs/memory_robustness/parity_coherence_ratio.pdf",
+      "bytes": 16988,
+      "sha256": "23ac23c4326e52e53fa4ec345e2cfe3462269d94df3a73967e0bd31f6ebfaf7a"
+    },
+    {
+      "path": "outputs/memory_robustness/parity_coherence_ratio.png",
+      "bytes": 115888,
+      "sha256": "5e57a6806e3bff825f6691f94f8f31492db9f44b7fb39b8a5c853acf9232aea3"
+    },
+    {
+      "path": "outputs/memory_robustness/parity_coherence_ratio_checks.csv",
+      "bytes": 1632,
+      "sha256": "64d23f920468d9607a48f777a29cfaa207dbe9ce00d93047493f81246fa633a9"
+    },
+    {
+      "path": "outputs/memory_robustness/parity_coherence_ratio_verification.json",
+      "bytes": 1059,
+      "sha256": "3879b039affaccfd2575dc0c0ed39e4e519851795352d3f2b9fa0bab6a145211"
+    },
+    {
+      "path": "outputs/memory_robustness/parity_vs_memory_count.csv",
+      "bytes": 5350,
+      "sha256": "a2d590233b3941903bafc1649ca24bf57eb51453e37acee407f89ff7ed061e52"
+    },
+    {
+      "path": "outputs/memory_robustness/parity_vs_memory_count.png",
+      "bytes": 170406,
+      "sha256": "e1853f2b60e48edb2906e8180bb3f0c85e64e02add9401b4d62048eb361ca323"
+    },
+    {
+      "path": "outputs/memory_robustness/schedule_readout_contamination.png",
+      "bytes": 116955,
+      "sha256": "360f16bd19286146a28bacbeeb74ac958c0b578c12c6bf1eda86e2d6bcf9f881"
+    },
+    {
+      "path": "outputs/memory_robustness/sensitivity_grids.npz",
+      "bytes": 47405,
+      "sha256": "5b8e660cb7fea6bb77fed3a8ce524bf9d3bbd6cd3b04578f256565fc8a2f2126"
+    },
+    {
+      "path": "outputs/memory_robustness/shot_planning.csv",
+      "bytes": 311,
+      "sha256": "b3ee404ff98cda6390a8649b8c41ccd3fb4b831c416320e83d40e0789c615197"
+    },
+    {
+      "path": "outputs/memory_robustness/storage_and_readout_sensitivity.png",
+      "bytes": 141196,
+      "sha256": "f5cec9c0c78645f49bd241199b7ea460d1192247c7ea66bd819c5d33b887a662"
+    },
+    {
+      "path": "outputs/memory_robustness/synthetic_shots.csv",
+      "bytes": 481,
+      "sha256": "53bce501089712f4ba862e42ecd6d9252ca967c69c50fbebc084a3c4cecb6a77"
+    },
+    {
+      "path": "outputs/memory_robustness/verification_summary.json",
+      "bytes": 7187,
+      "sha256": "ec91ecda8f52d5f79c1b403f7690d717d92bfcd2a4bd74017a6847f19013cd6d"
+    },
+    {
+      "path": "outputs/notebooks/ideal_circuit_verification.html",
+      "bytes": 633673,
+      "sha256": "b96f03bb52614ab218d7963221eee261f9b44449fb26d33a92bd3482580da5ee"
+    },
+    {
+      "path": "outputs/notebooks/memory_parity_robustness.html",
+      "bytes": 934691,
+      "sha256": "ca54032949100a8f34d906f05ef88928ecbc764ecf796a55bbb272d0b783e9d9"
+    },
+    {
+      "path": "outputs/notebooks/relational_zeno_analysis.html",
+      "bytes": 471625,
+      "sha256": "a31666789b4b54f093381875b32c67fdbe8692bf550076ecf39996e46f27de94"
+    },
+    {
+      "path": "outputs/notebooks/relational_zeno_realistic_predictions.html",
+      "bytes": 523313,
+      "sha256": "7073a366281087d393325c08a40d4151e9fe06e5a06af10afc2b31fd59ece6f6"
+    },
+    {
+      "path": "outputs/notebooks/understanding_survival_curves.html",
+      "bytes": 1351104,
+      "sha256": "e23437b5e2c9d8b09f1e7d479780cc39e1df9cb152ec08ed8e2e541b33b7c26e"
+    },
+    {
+      "path": "outputs/survival_curves/delta_sweep_low_n.png",
+      "bytes": 323881,
+      "sha256": "324478b3c30fe1938d24f35efb71be3ac0f99894fea427aaa8b8f83d81a44ec9"
+    },
+    {
+      "path": "outputs/survival_curves/fig2a_from_shots.png",
+      "bytes": 102049,
+      "sha256": "e8aeb8df67df2904080995211a062e5db8b880311db27c6f8f8f652b2f20c218"
+    },
+    {
+      "path": "outputs/survival_curves/fig2a_reproduced.png",
+      "bytes": 92367,
+      "sha256": "3c2f06a13ffda4fcbcc7bb68d262661198d9a9e4f16163538e4855776ae9751f"
+    },
+    {
+      "path": "outputs/survival_curves/q1_unread_limit.png",
+      "bytes": 87203,
+      "sha256": "81018323f9cced4110c19fa738db532cb204a3ce8bcaf76d2a85bc5f72e0e504"
+    },
+    {
+      "path": "outputs/survival_curves/q2_minus_subset.png",
+      "bytes": 143751,
+      "sha256": "aaf610fbc4162f4c9b0c671166ddaa73cb19f592ab33b8eb5b066222d6fcba09"
+    },
+    {
+      "path": "outputs/survival_curves/q3_plus_subset.png",
+      "bytes": 133318,
+      "sha256": "e4afede94b74bc65dccb3f47443fca1516721041240b355fd3f2ed8316b1a346"
+    },
+    {
+      "path": "outputs/survival_curves/q3_plus_vs_offset.png",
+      "bytes": 121209,
+      "sha256": "d4a513d5ff9d07251073c36bfce4338d0e8de39e0f498ed50b588b6b9e334369"
+    },
+    {
+      "path": "outputs/survival_curves/q4_curve_crossing.png",
+      "bytes": 156670,
+      "sha256": "5136c7ed45131ae4facbcc8b91c163835cc7146aa01b8390e2f7294ea252552b"
+    },
+    {
+      "path": "outputs/survival_curves/q5_offset_summary.png",
+      "bytes": 103124,
+      "sha256": "8665295f560c4aee3eb9c578fdcafdff96563f7060c2047af943aed6d64bd016"
+    },
+    {
+      "path": "outputs/survival_curves/same_limits_large_n.png",
+      "bytes": 215726,
+      "sha256": "22bdad9f8e581f0d9d6488c51262d84be1a69408aac0e5ffff1eeb6940b6e18a"
+    },
+    {
+      "path": "outputs/survival_curves/train_rotation_crossing_comparison.png",
+      "bytes": 163385,
+      "sha256": "b6656545b036522c00cfe0dacf743598d44c8e2c084501bf372bf8a19dd71c40"
+    },
+    {
+      "path": "outputs/zeno_clock_basis.pdf",
+      "bytes": 23752,
+      "sha256": "b4896f44c184092f005574b8dcbd609dac11a020697abb1f057cfac91575ca43"
+    },
+    {
+      "path": "outputs/zeno_clock_basis.png",
+      "bytes": 66047,
+      "sha256": "7a35ec1ca79ebadd9800343b07f0298e97efbd38491deac2e2578c13d7551e0d"
+    },
+    {
+      "path": "outputs/zeno_panel_a.pdf",
+      "bytes": 28059,
+      "sha256": "93e23b7a714fb644e490c8760065a6008b63797f7187598335d9106f68d03ab6"
+    },
+    {
+      "path": "outputs/zeno_panel_a.png",
+      "bytes": 71289,
+      "sha256": "51e478828e20d94f34bc879a4a7b1b1f8506b1886bef432fa379db117ad257d0"
+    },
+    {
+      "path": "outputs/zeno_panel_b.pdf",
+      "bytes": 19301,
+      "sha256": "a1f51c3754bfe00ee99f689f134a9f1dd4217f3a1c9552aad15bd24a76fe51f5"
+    },
+    {
+      "path": "outputs/zeno_panel_b.png",
+      "bytes": 64426,
+      "sha256": "9257273794e3f2a9e0e2a2c085699d7d9ee1b79bc67fb4e5898be73e6d5973b8"
+    },
+    {
+      "path": "relational_zeno_analysis.ipynb",
+      "bytes": 109819,
+      "sha256": "7aeae3e5f5ee389e48890bd3321c2a7884131813b464ddd7d8b7c79bdc40fcae"
+    },
+    {
+      "path": "relational_zeno_realistic_predictions.ipynb",
+      "bytes": 218894,
+      "sha256": "6c0c86fc7ccdd6caed5516f9c969f8c87f85cc1b2ac86361dfd674894f856670"
+    },
+    {
+      "path": "requirements.txt",
+      "bytes": 213,
+      "sha256": "382f6ca6fe94ccd3da555bd451a1f140411b66f9fe381b5a39a5b31541bfcc2b"
+    },
+    {
+      "path": "scripts/run_notebooks.py",
+      "bytes": 2002,
+      "sha256": "8042f234955e358cd09bca6afb822bf0d47722e83d54c9470dd3f1f020326a72"
+    },
+    {
+      "path": "understanding_survival_curves.ipynb",
+      "bytes": 959464,
+      "sha256": "36a41fe23cab9a5a9eda54a5aa7d119ace162ccdfcfc09928685e1fcd1bd034e"
+    },
+    {
+      "path": "visibility_system_Q.png",
+      "bytes": 251284,
+      "sha256": "e956dd13e007510af0d2a32cb1501d0ccb1ad07464998eb807c9b76d710599bf"
+    }
+  ],
+  "inventory_excludes_itself": true
+}

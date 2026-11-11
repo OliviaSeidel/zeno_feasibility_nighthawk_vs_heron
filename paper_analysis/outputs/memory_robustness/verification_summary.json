@@ -1,0 +1,260 @@
+{
+  "seed": 20261110,
+  "checks": {
+    "kraus_channel_cases": 24,
+    "largest_channel_difference": 3.3306690738754696e-16,
+    "interleaved_timing_cases": 12,
+    "largest_timing_difference": 6.661338147750939e-16,
+    "random_noisy_cases": 30,
+    "largest_parity_formula_difference": 4.440892098500626e-16,
+    "largest_change_in_reduced_q": 2.7755575615628914e-16,
+    "density_matrix_grid_checks": 4,
+    "largest_grid_difference": 8.326672684688674e-17,
+    "memory_sweep_circuits": 56,
+    "offset_sweep_circuits": 81,
+    "tolerance": 2e-10
+  },
+  "coherence_ratio_figure": {
+    "density_matrix_cases": 18,
+    "largest_formula_difference": 2.220446049250313e-16,
+    "largest_dephased_control_parity": 0.0,
+    "tolerance": 2e-10,
+    "x_axis": "longest post-recording memory storage time divided by common T2",
+    "varied": "T2 at fixed drive angles and gate timings; T1=Tphi=1.5*T2",
+    "memory_readout_error": 0.0,
+    "schedule_readout_error": 0.0,
+    "memory_counts": [
+      1,
+      3,
+      6
+    ],
+    "marker_ratios": [
+      0.0,
+      0.01,
+      0.1,
+      0.5,
+      1.0,
+      2.0
+    ],
+    "profiles": [
+      {
+        "N": 1,
+        "longest_storage_us": 5.2,
+        "total_storage_us": 5.2,
+        "total_over_longest_storage": 1.0
+      },
+      {
+        "N": 3,
+        "longest_storage_us": 11.926197723675813,
+        "total_storage_us": 25.68929658551372,
+        "total_over_longest_storage": 2.1540223615876744
+      },
+      {
+        "N": 6,
+        "longest_storage_us": 14.057747154594766,
+        "total_storage_us": 57.7732414637843,
+        "total_over_longest_storage": 4.109708392706519
+      }
+    ],
+    "canvas_inches": [
+      3.404,
+      3.1
+    ],
+    "font_points": 10
+  },
+  "assumptions": {
+    "omega_rad_per_us": 0.3141592653589793,
+    "train_angle": 3.0,
+    "offset_angle": 1.5707963267948966,
+    "record_us": 0.18,
+    "final_wait_us": 0.2,
+    "t1_us": 100.0,
+    "tphi_us": 150.0,
+    "t2_us": 85.71428571428571,
+    "memory_assignment_error": 0.02,
+    "schedule_assignment_error": 0.02,
+    "calibration_status": "Illustrative assumptions, not measured backend calibration",
+    "excluded": "Q/S quantum noise; entangling/basis-gate noise; heating; correlations; drift"
+  },
+  "example_memory_count": 6,
+  "example_storage_times_us": [
+    14.057747154594766,
+    12.286197723675812,
+    10.51464829275686,
+    8.743098861837906,
+    6.971549430918953,
+    5.2
+  ],
+  "examples": [
+    {
+      "scenario": "ideal",
+      "true_minus_parity": -1.0,
+      "reported_minus_parity": -1.0,
+      "reported_plus_parity": 0.33333333333333326,
+      "reported_minus_fraction": 0.2499999999999994
+    },
+    {
+      "scenario": "relaxation only",
+      "true_minus_parity": -0.7491124244579292,
+      "reported_minus_parity": -0.7491124244579292,
+      "reported_plus_parity": 0.24970414148597628,
+      "reported_minus_fraction": 0.24999999999999942
+    },
+    {
+      "scenario": "pure dephasing only",
+      "true_minus_parity": -0.6803452132466223,
+      "reported_minus_parity": -0.6803452132466223,
+      "reported_plus_parity": 0.22678173774887406,
+      "reported_minus_fraction": 0.24999999999999936
+    },
+    {
+      "scenario": "both memory channels",
+      "true_minus_parity": -0.5096550521635242,
+      "reported_minus_parity": -0.5096550521635242,
+      "reported_plus_parity": 0.1698850173878413,
+      "reported_minus_fraction": 0.2499999999999994
+    },
+    {
+      "scenario": "memory readout only",
+      "true_minus_parity": -1.0,
+      "reported_minus_parity": -0.7827577896960001,
+      "reported_plus_parity": 0.260919263232,
+      "reported_minus_fraction": 0.2499999999999994
+    },
+    {
+      "scenario": "schedule readout only",
+      "true_minus_parity": -1.0,
+      "reported_minus_parity": -0.923076923076923,
+      "reported_plus_parity": 0.32432432432432423,
+      "reported_minus_fraction": 0.25999999999999934
+    },
+    {
+      "scenario": "all three sources",
+      "true_minus_parity": -0.5096550521635242,
+      "reported_minus_parity": -0.36824904197438735,
+      "reported_plus_parity": 0.12938479853154153,
+      "reported_minus_fraction": 0.2599999999999994
+    }
+  ],
+  "all_noise_by_memory_count": [
+    {
+      "N": 1,
+      "scenario": "all three sources",
+      "minus": -0.833992083511858,
+      "plus": 0.2930242455582203,
+      "p_minus": 0.2599999999999998,
+      "memory_exposure_us": 5.2
+    },
+    {
+      "N": 2,
+      "scenario": "all three sources",
+      "minus": -0.7111838805878183,
+      "plus": 0.24987541750382788,
+      "p_minus": 0.2599999999999998,
+      "memory_exposure_us": 15.35464829275686
+    },
+    {
+      "N": 3,
+      "scenario": "all three sources",
+      "minus": -0.6051873790906658,
+      "plus": 0.21263340346428788,
+      "p_minus": 0.2599999999999997,
+      "memory_exposure_us": 25.68929658551372
+    },
+    {
+      "N": 4,
+      "scenario": "all three sources",
+      "minus": -0.5139085011666297,
+      "plus": 0.18056244635584281,
+      "p_minus": 0.2599999999999997,
+      "memory_exposure_us": 36.20394487827058
+    },
+    {
+      "N": 5,
+      "scenario": "all three sources",
+      "minus": -0.4354815128742396,
+      "plus": 0.15300701803689495,
+      "p_minus": 0.25999999999999945,
+      "memory_exposure_us": 46.89859317102744
+    },
+    {
+      "N": 6,
+      "scenario": "all three sources",
+      "minus": -0.36824904197438735,
+      "plus": 0.12938479853154153,
+      "p_minus": 0.2599999999999994,
+      "memory_exposure_us": 57.7732414637843
+    },
+    {
+      "N": 7,
+      "scenario": "all three sources",
+      "minus": -0.3107431114065081,
+      "plus": 0.1091800121158001,
+      "p_minus": 0.25999999999999956,
+      "memory_exposure_us": 68.82788975654115
+    },
+    {
+      "N": 8,
+      "scenario": "all three sources",
+      "minus": -0.2616672533563813,
+      "plus": 0.09193714307116103,
+      "p_minus": 0.2599999999999997,
+      "memory_exposure_us": 80.06253804929803
+    }
+  ],
+  "shot_plan": [
+    {
+      "N": 1,
+      "minus_parity": -0.833992083511858,
+      "total_runs_per_condition": 116,
+      "total_runs_both": 232
+    },
+    {
+      "N": 2,
+      "minus_parity": -0.7111838805878183,
+      "total_runs_per_condition": 193,
+      "total_runs_both": 386
+    },
+    {
+      "N": 3,
+      "minus_parity": -0.6051873790906658,
+      "total_runs_per_condition": 303,
+      "total_runs_both": 606
+    },
+    {
+      "N": 4,
+      "minus_parity": -0.5139085011666297,
+      "total_runs_per_condition": 458,
+      "total_runs_both": 916
+    },
+    {
+      "N": 5,
+      "minus_parity": -0.4354815128742396,
+      "total_runs_per_condition": 675,
+      "total_runs_both": 1350
+    },
+    {
+      "N": 6,
+      "minus_parity": -0.36824904197438735,
+      "total_runs_per_condition": 982,
+      "total_runs_both": 1964
+    },
+    {
+      "N": 7,
+      "minus_parity": -0.3107431114065081,
+      "total_runs_per_condition": 1418,
+      "total_runs_both": 2836
+    },
+    {
+      "N": 8,
+      "minus_parity": -0.2616672533563813,
+      "total_runs_per_condition": 2039,
+      "total_runs_both": 4078
+    }
+  ],
+  "versions": {
+    "python": "3.9.6",
+    "numpy": "2.0.2",
+    "matplotlib": "3.9.4"
+  }
+}
