@@ -1,35 +1,38 @@
-# Paper analysis of coherent measurement schedules and memory parity
+# Paper analysis
 
-A driven qubit is recorded into fresh memory qubits. A schedule qubit places an extra rotation before or after the recording sequence. Reading that qubit in the plus/minus basis compares the two histories.
+These notebooks explain the survival curves, check the circuit predictions, and calculate how memory noise changes the parity signal. The circuit records a driven qubit into fresh memory qubits. An extra rotation happens before or after the recording sequence, controlled by a schedule qubit.
 
-These calculations explain the survival curves, check the ideal formulas, and explore memory noise. They use ordinary quantum mechanics and do not distinguish relational time from an external description of time.
+## Notebooks
 
-## Start here
-
-| Notebook | Purpose |
+| Notebook | What it covers |
 | --- | --- |
-| [Understanding the survival curves](understanding_survival_curves.ipynb) | Reference, plus, minus, and unread curves, with offset dependence and large-memory limits. |
+| [Understanding the survival curves](understanding_survival_curves.ipynb) | The reference, plus, minus, and unread curves, including how they change with the offset and number of memories. |
 | [Ideal circuit predictions](relational_zeno_analysis.ipynb) | Branch states, visibility, system survival, and the main paper panels. |
-| [Independent circuit checks](ideal_circuit_verification.ipynb) | Gate-by-gate checks, both memory-parity groups, and uneven intervals. |
-| [Memory parity with noise](memory_parity_robustness.ipynb) | Memory relaxation, dephasing, readout errors, shot estimates, and the new coherence-ratio figure. |
-| [Timing and resource estimates](relational_zeno_realistic_predictions.ipynb) | A separate system-only noise model, sequence duration, gate budget, and tomography cost. |
+| [Independent circuit checks](ideal_circuit_verification.ipynb) | Gate-by-gate calculations, both memory-parity groups, and uneven recording intervals. |
+| [Memory parity with noise](memory_parity_robustness.ipynb) | Memory relaxation and dephasing, readout errors, shot estimates, and the Figure 3 calculation. |
+| [Timing and resource estimates](relational_zeno_realistic_predictions.ipynb) | A separate system-only noise model, circuit duration, gate counts, and tomography cost. |
 
-Each notebook includes explanations and saved results. [HTML reading copies](outputs/notebooks/) contain the same content. Download one and open it in a browser. [Sara's processor-feasibility notebook](../zeno_feasibility_nighthawk_vs_heron_paper_version.ipynb) remains at the repository root.
+The [Nighthawk and Heron feasibility notebook](../zeno_feasibility_nighthawk_vs_heron_paper_version.ipynb) compares processor layouts. It is in the repository root.
 
-## Figure 3. Memory storage versus coherence
+Each notebook has saved results. The [HTML copies](outputs/notebooks/) can be downloaded and opened in a browser.
 
-Section 15 of [Memory parity with noise](memory_parity_robustness.ipynb) generates the parity plot used as Figure 3 in the current manuscript. The figure and supporting data are available below.
+## Figure 3
 
-- [PDF for the paper](outputs/memory_robustness/parity_coherence_ratio.pdf) and [PNG preview](outputs/memory_robustness/parity_coherence_ratio.png).
-- [Curve values](outputs/memory_robustness/parity_coherence_ratio.csv), [independent circuit checks](outputs/memory_robustness/parity_coherence_ratio_checks.csv), and [verification summary](outputs/memory_robustness/parity_coherence_ratio_verification.json).
+Section 15 of [Memory parity with noise](memory_parity_robustness.ipynb) produces the memory storage and coherence plot.
 
-The horizontal axis is the longest post-recording memory storage time divided by the common coherence time, tau_max/T2. It is not the total circuit duration. Curves use one, three, and six memories with fixed timings and varying coherence. Memory and schedule readout are perfect in this figure. Finite-coherence curves approach the ideal parity of -1 when aggregate storage exposure is small. The matched dephased-schedule control stays at zero under the specified channels. This comparison does not certify the entire state or exclude every alternative preparation.
+- [PDF](outputs/memory_robustness/parity_coherence_ratio.pdf) and [PNG](outputs/memory_robustness/parity_coherence_ratio.png)
+- [Curve data](outputs/memory_robustness/parity_coherence_ratio.csv)
+- [Density-matrix checks](outputs/memory_robustness/parity_coherence_ratio_checks.csv) and [verification summary](outputs/memory_robustness/parity_coherence_ratio_verification.json)
 
-The paper panel is 3.404 by 3.10 inches with 10-point serif text. Its PDF and PNG are reproducible from the notebook, including 18 direct density-matrix checks. The notebook's other figures retain the separate readout-error studies.
+The horizontal axis is the longest time a memory stores its record divided by its coherence time, tau_max/T2. The curves use one, three, and six memories. Gate timings stay fixed while T2 changes. This axis measures memory storage, not the total circuit duration.
 
-## Run the analysis
+The figure includes memory relaxation and dephasing, with ideal gates and perfect system and schedule qubits. Memory and schedule readout are also perfect here. The parity approaches -1 when the combined storage times are short compared with T2. The matched dephased-schedule control stays at zero under these channels. Other sections of the notebook examine readout errors separately.
 
-Use Python 3.9-3.12. Run the following commands from the repository root.
+The notebook exports a 3.404 by 3.10 inch panel with 10-point serif text and checks 18 points against direct density-matrix calculations.
+
+## Running the notebooks
+
+Use Python 3.9-3.12. From the repository root, run the commands below.
 
 ```bash
 cd paper_analysis
@@ -40,26 +43,33 @@ python -m ipykernel install --sys-prefix --name python3 --display-name "Python 3
 jupyter lab
 ```
 
-Run each notebook from top to bottom. All five run independently without a quantum account, hardware job, or credentials. The following command refreshes all five notebooks, generated figures, numerical files, and reading copies.
+Run a notebook from top to bottom. Each of the five analysis notebooks runs independently and does not need a quantum account or access to hardware.
+
+To rerun all five and update their saved results, figures, data files, and HTML copies, use
 
 ```bash
 python scripts/run_notebooks.py
 ```
 
-This updates saved artifacts in place. The runner uses the Python environment that launches it. Dependencies match the recorded Python 3.9.6 execution environment. The four existing analysis notebooks were executed on 2026-11-10. The parity notebook, including its new figure, was executed on 2026-11-11. Packaging checked saved outputs and code without rerunning the four unchanged calculations.
+This overwrites the saved outputs. The script uses the Python environment it is launched from. Dependencies are pinned in `requirements.txt`, and the saved results were produced with Python 3.9.6.
 
-## Outputs and scope
+## Where the results are saved
 
-- `outputs/ideal_verification/` contains random circuit cases, parity plots, and numerical verification.
-- `outputs/memory_robustness/` contains noise sweeps, the coherence-ratio figure, simulated shots, and planning estimates.
-- `outputs/survival_curves/` and `outputs/fig2b_saturation/` contain explanatory plots and large-memory limits.
-- `outputs/zeno_panel_a.*`, `outputs/zeno_panel_b.*`, and `outputs/zeno_clock_basis.*` are paper-panel exports and retained snapshots.
-- `outputs/notebooks/` contains five HTML reading copies.
-- Root `fig1`-`fig5` exports are figures from the timing/resource notebook. Other root images and some older outputs are preserved snapshots, not all regenerated by current cells.
-- The [package inventory](artifact_inventory.json) lists files, checksums, notebook checks, and provenance.
+- `outputs/ideal_verification/` contains the circuit checks and parity plots.
+- `outputs/memory_robustness/` contains the noise sweeps, Figure 3, simulated shots, and shot estimates.
+- `outputs/survival_curves/` and `outputs/fig2b_saturation/` contain the survival-curve plots and large-memory limits.
+- `outputs/zeno_panel_a.*`, `outputs/zeno_panel_b.*`, and `outputs/zeno_clock_basis.*` contain the main paper panels and earlier exports.
+- `outputs/notebooks/` contains the HTML copies.
+- The `fig1` through `fig5` files in this folder come from the timing and resource notebook. Some other images are earlier exports and are not regenerated by the current cells.
 
-This package was copied from the `relational-zeno-predictions` working tree on 2026-11-11. Notebook code and saved computational outputs are preserved. Prose links to the absent manuscript were changed to plain text, prose punctuation was revised, and HTML copies were regenerated. Manuscript folders, private notes, correspondence, environments, and repository history are excluded. The ideal verification notebook optionally records a manuscript-source hash when that file exists. Its absence does not affect the calculation. Any source hash in an existing saved summary records the original execution context.
+[File checksums and execution details](artifact_inventory.json) are recorded separately.
 
-In the memory-noise notebook, system and schedule-qubit decoherence, imperfect gates, heating, drift, routing overhead, and correlated errors are excluded. Its values are illustrative model assumptions rather than measured processor calibration. The separate timing notebook does not combine these effects into a complete device simulation. Parity alone is not a general entanglement witness. Asymmetric or correlated readout can also alter the control baseline.
+## Assumptions
 
-The older notebooks call the schedule qubit `C`, and the newer ones call it `Q`. A history-clock register in the tomography estimate is a separate object. The zero-offset reference is a separate run. Manuscript equation labels retained in prose are contextual references, not local file links.
+The memory-noise calculation uses illustrative parameters, not measured processor calibrations. It leaves out system and schedule-qubit decoherence, gate errors, heating, drift, routing overhead, and correlated errors. The timing notebook uses a separate model. Neither gives a complete device simulation.
+
+Memory parity tests a particular correlation. It does not certify the full state or, on its own, establish entanglement. Asymmetric or correlated readout errors can also change the control baseline.
+
+The schedule qubit is called `C` in the older notebooks and `Q` in the newer ones. The history-clock register used in the tomography estimate is a separate object. The zero-offset reference requires a separate run.
+
+These are ordinary quantum-circuit calculations. They do not distinguish a relational description of time from one using an external time parameter. Equation labels refer to the paper, whose source is not included here.
