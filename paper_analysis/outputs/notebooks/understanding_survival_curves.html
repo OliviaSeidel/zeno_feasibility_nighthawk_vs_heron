@@ -7549,7 +7549,7 @@ a.anchor-link {
 </tr>
 </tbody>
 </table>
-<p>The schedule qubit is called $C$ here and $Q$ in the newer notebooks. It selects the schedule; it is not an extra clock that orders the gates.</p>
+<p>The schedule qubit is called $C$ here and $Q$ in the newer notebooks. It selects the schedule and is not an extra clock that orders the gates.</p>
 <p>We check the formulas against a gate simulation, then explain the limits, the curve crossing, and the effect of changing the offset. Figures go in <code>outputs/survival_curves/</code> and <code>outputs/fig2b_saturation/</code>.</p>
 </div>
 </div>
@@ -7636,7 +7636,7 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="The-formulas,-and-a-check-against-the-circuit">The formulas, and a check against the circuit<a class="anchor-link" href="#The-formulas,-and-a-check-against-the-circuit">¶</a></h2><p>The curves come from the closed-form results in Sec. III of the paper. Two symbols do most of the work:</p>
+<h2 id="The-formulas,-and-a-check-against-the-circuit">The formulas, and a check against the circuit<a class="anchor-link" href="#The-formulas,-and-a-check-against-the-circuit">¶</a></h2><p>The curves come from the closed-form results in Sec. III of the paper. Two symbols do most of the work.</p>
 <ul>
 <li>$\Omega\Delta t = \Omega T / N$ is the drive rotation between two records, and $c = \cos(\Omega\Delta t)$.</li>
 <li>$V = \cos^2(\Omega\delta/2)$ is the schedule visibility.</li>
@@ -7895,7 +7895,7 @@ Notebook, N=8:  reference 0.781  plus 0.520  unread 0.445  minus 0.219
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h3 id="Build-the-curves-from-shots">Build the curves from shots<a class="anchor-link" href="#Build-the-curves-from-shots">¶</a></h3><p>In each shot, run the circuit, apply a Hadamard to $C$, then read $C$ and $S$. A reported $C=0$ means plus and $C=1$ means minus. The memories are not read in this calculation.</p>
 <p>For each group, divide the number of $S=0$ shots by the total number in that group. The unread curve uses all shots. The reference needs a separate zero-offset run.</p>
-<p>Below we draw 2,000 simulated shots per $N$. Dots show the sampled fractions; lines show the exact formulas. These are simulated data.</p>
+<p>Below we draw 2,000 simulated shots per $N$. Dots show the sampled fractions, and lines show the exact formulas. These are simulated data.</p>
 </div>
 </div>
 </div>
@@ -7965,7 +7965,7 @@ Notebook, N=8:  reference 0.781  plus 0.520  unread 0.445  minus 0.219
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="1.-Why-does-the-unread-curve-approach-0.5?">1. Why does the unread curve approach 0.5?<a class="anchor-link" href="#1.-Why-does-the-unread-curve-approach-0.5?">¶</a></h2><p>The limit is $V=\cos^2(\Omega\delta/2)$. It equals 0.5 here because $\Omega\delta=\pi/2$.</p>
-<p>Frequent records freeze the drive between records. The extra rotation sits outside that train, so it is not frozen. Schedule A applies it after the train; schedule B applies it before. Both approach the same probability $V$ of ending in zero.</p>
+<p>Frequent records freeze the drive between records. The extra rotation sits outside that train, so it is not frozen. Schedule A applies it after the train, and schedule B applies it before. Both approach the same probability $V$ of ending in zero.</p>
 <p>Ignoring $C$ averages the two schedules. The recording gates still happen. The next block checks their limits separately.</p>
 </div>
 </div>
@@ -8060,7 +8060,7 @@ Notebook, N=8:  reference 0.781  plus 0.520  unread 0.445  minus 0.219
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><strong>What to take from the plot.</strong> Each yellow curve flattens onto its dotted line. Changing $\delta$ moves the limit: $\pi/3 \to 0.75$, $\pi/2 \to 0.5$, $2\pi/3 \to 0.25$. Getting back the ordinary Zeno limit of 1 requires $\delta \to 0$.</p>
+<p><strong>What to take from the plot.</strong> Each yellow curve flattens onto its dotted line. Changing $\delta$ moves the limit according to $\pi/3 \to 0.75$, $\pi/2 \to 0.5$, $2\pi/3 \to 0.25$. Getting back the ordinary Zeno limit of 1 requires $\delta \to 0$.</p>
 <p><strong>The dip near N = 4.</strong> At $\Omega\delta = \pi/2$ the unread formula simplifies to $\tfrac12 - \tfrac14\,c^{N-1}\sin(\Omega\Delta t)$. At N = 2, $c \approx 0$, so the curve is close to ½. As N grows, $c \to 1$ but $\sin(\Omega\Delta t) \to 0$. The gap below ½ first grows and then shrinks, and that is the dip. It is not a separate effect.</p>
 </div>
 </div>
@@ -8141,10 +8141,10 @@ Notebook, N=8:  reference 0.781  plus 0.520  unread 0.445  minus 0.219
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="3.-Why-does-the-plus-curve-rise?">3. Why does the plus curve rise?<a class="anchor-link" href="#3.-Why-does-the-plus-curve-rise?">¶</a></h2><p>The unread result is the weighted average of the two groups:</p>
+<h2 id="3.-Why-does-the-plus-curve-rise?">3. Why does the plus curve rise?<a class="anchor-link" href="#3.-Why-does-the-plus-curve-rise?">¶</a></h2><p>The unread result is the weighted average of the two groups.</p>
 <p>$$P_0^{\mathrm{unread}}=p_+P_0^++p_-P_0^-.$$</p>
 <p>At large $N$, the minus term goes to zero and the unread result goes to $V$. Therefore $P_0^+\to V/p_+=2V/(1+V)$. Here that is $2/3$.</p>
-<p>The right panel shows the counting directly. The red layer is minus shots with $S=0$; it shrinks away. The green layer, plus shots with $S=0$, then accounts for the whole unread curve.</p>
+<p>The right panel shows the counting directly. The red layer consists of minus shots with $S=0$ and shrinks away. The green layer, plus shots with $S=0$, then accounts for the whole unread curve.</p>
 </div>
 </div>
 </div>
@@ -8208,10 +8208,10 @@ Notebook, N=8:  reference 0.781  plus 0.520  unread 0.445  minus 0.219
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="How-$%5Cdelta$-moves-the-plus-curve">How $\delta$ moves the plus curve<a class="anchor-link" href="#How-$%5Cdelta$-moves-the-plus-curve">¶</a></h3><p>The plus curve slides between the other two:</p>
+<h3 id="How-$%5Cdelta$-moves-the-plus-curve">How $\delta$ moves the plus curve<a class="anchor-link" href="#How-$%5Cdelta$-moves-the-plus-curve">¶</a></h3><p>The plus curve slides between the other two.</p>
 <ul>
-<li>$\delta \to 0$: the schedules coincide, minus shots disappear, and plus becomes the reference (limit 1).</li>
-<li>$\Omega\delta = \pi$: $V = 0$, the two schedules don't overlap, and plus looks exactly like minus (limit 0).</li>
+<li>As $\delta \to 0$, the schedules coincide, minus shots disappear, and plus becomes the reference (limit 1).</li>
+<li>At $\Omega\delta = \pi$, $V = 0$, the two schedules don't overlap, and plus looks exactly like minus (limit 0).</li>
 </ul>
 <p>In between, the limit is $2V/(1+V)$.</p>
 </div>
@@ -8267,7 +8267,7 @@ Notebook, N=8:  reference 0.781  plus 0.520  unread 0.445  minus 0.219
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="4.-Why-do-the-curves-nearly-cross-at-two-records?">4. Why do the curves nearly cross at two records?<a class="anchor-link" href="#4.-Why-do-the-curves-nearly-cross-at-two-records?">¶</a></h2><p>With $\Omega T=3$ and $N=2$, each drive pulse is 1.5 radians, about 86°. This is close to a 90° pulse, for which $c=\cos(\Omega T/N)=0$.</p>
 <p>All four formulas are $1/2$ plus terms containing $c^N$ or $c^{N-1}$. At exactly 90°, these terms vanish for $N\ge2$. The minus group still needs a nonzero probability to be defined.</p>
-<p>Two records are not special: doubling $\Omega T$ moves the near crossing to four records. Changing the offset moves the unread limit but leaves the exact 90° crossing at $1/2$. The plots below separate these two effects.</p>
+<p>Two records are not special. Doubling $\Omega T$ moves the near crossing to four records. Changing the offset moves the unread limit but leaves the exact 90° crossing at $1/2$. The plots below separate these two effects.</p>
 </div>
 </div>
 </div>

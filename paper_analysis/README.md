@@ -1,4 +1,4 @@
-# Paper analysis: coherent measurement schedules and memory parity
+# Paper analysis of coherent measurement schedules and memory parity
 
 A driven qubit is recorded into fresh memory qubits. A schedule qubit places an extra rotation before or after the recording sequence. Reading that qubit in the plus/minus basis compares the two histories.
 
@@ -8,28 +8,28 @@ These calculations explain the survival curves, check the ideal formulas, and ex
 
 | Notebook | Purpose |
 | --- | --- |
-| [Understanding the survival curves](understanding_survival_curves.ipynb) | Reference, plus, minus, and unread curves; offset dependence and large-memory limits. |
+| [Understanding the survival curves](understanding_survival_curves.ipynb) | Reference, plus, minus, and unread curves, with offset dependence and large-memory limits. |
 | [Ideal circuit predictions](relational_zeno_analysis.ipynb) | Branch states, visibility, system survival, and the main paper panels. |
 | [Independent circuit checks](ideal_circuit_verification.ipynb) | Gate-by-gate checks, both memory-parity groups, and uneven intervals. |
 | [Memory parity with noise](memory_parity_robustness.ipynb) | Memory relaxation, dephasing, readout errors, shot estimates, and the new coherence-ratio figure. |
 | [Timing and resource estimates](relational_zeno_realistic_predictions.ipynb) | A separate system-only noise model, sequence duration, gate budget, and tomography cost. |
 
-Each notebook includes explanations and saved results. [HTML reading copies](outputs/notebooks/) contain the same content; download one and open it in a browser. [Sara's processor-feasibility notebook](../zeno_feasibility_nighthawk_vs_heron_paper_version.ipynb) remains at the repository root.
+Each notebook includes explanations and saved results. [HTML reading copies](outputs/notebooks/) contain the same content. Download one and open it in a browser. [Sara's processor-feasibility notebook](../zeno_feasibility_nighthawk_vs_heron_paper_version.ipynb) remains at the repository root.
 
-## Figure 3: memory storage versus coherence
+## Figure 3. Memory storage versus coherence
 
-Section 15 of [Memory parity with noise](memory_parity_robustness.ipynb) generates the parity plot used as Figure 3 in the current manuscript:
+Section 15 of [Memory parity with noise](memory_parity_robustness.ipynb) generates the parity plot used as Figure 3 in the current manuscript. The figure and supporting data are available below.
 
 - [PDF for the paper](outputs/memory_robustness/parity_coherence_ratio.pdf) and [PNG preview](outputs/memory_robustness/parity_coherence_ratio.png).
 - [Curve values](outputs/memory_robustness/parity_coherence_ratio.csv), [independent circuit checks](outputs/memory_robustness/parity_coherence_ratio_checks.csv), and [verification summary](outputs/memory_robustness/parity_coherence_ratio_verification.json).
 
-The horizontal axis is the longest post-recording memory storage time divided by the common coherence time, tau_max/T2. It is not the total circuit duration. Curves use one, three, and six memories with fixed timings and varying coherence; memory and schedule readout are perfect in this figure. Finite-coherence curves approach the ideal parity of -1 when aggregate storage exposure is small. The matched dephased-schedule control stays at zero under the specified channels. This comparison does not certify the entire state or exclude every alternative preparation.
+The horizontal axis is the longest post-recording memory storage time divided by the common coherence time, tau_max/T2. It is not the total circuit duration. Curves use one, three, and six memories with fixed timings and varying coherence. Memory and schedule readout are perfect in this figure. Finite-coherence curves approach the ideal parity of -1 when aggregate storage exposure is small. The matched dephased-schedule control stays at zero under the specified channels. This comparison does not certify the entire state or exclude every alternative preparation.
 
 The paper panel is 3.404 by 3.10 inches with 10-point serif text. Its PDF and PNG are reproducible from the notebook, including 18 direct density-matrix checks. The notebook's other figures retain the separate readout-error studies.
 
 ## Run the analysis
 
-Use Python 3.9-3.12. From the repository root:
+Use Python 3.9-3.12. Run the following commands from the repository root.
 
 ```bash
 cd paper_analysis
@@ -40,26 +40,26 @@ python -m ipykernel install --sys-prefix --name python3 --display-name "Python 3
 jupyter lab
 ```
 
-Run each notebook from top to bottom. All five run independently without a quantum account, hardware job, or credentials. To refresh all five notebooks, generated figures, numerical files, and reading copies:
+Run each notebook from top to bottom. All five run independently without a quantum account, hardware job, or credentials. The following command refreshes all five notebooks, generated figures, numerical files, and reading copies.
 
 ```bash
 python scripts/run_notebooks.py
 ```
 
-This updates saved artifacts in place. The runner uses the Python environment that launches it. Dependencies match the recorded Python 3.9.6 execution environment. The four existing analysis notebooks were executed on 2026-11-10; the parity notebook, including its new figure, was executed on 2026-11-11. Packaging checked saved outputs and code without rerunning the four unchanged calculations.
+This updates saved artifacts in place. The runner uses the Python environment that launches it. Dependencies match the recorded Python 3.9.6 execution environment. The four existing analysis notebooks were executed on 2026-11-10. The parity notebook, including its new figure, was executed on 2026-11-11. Packaging checked saved outputs and code without rerunning the four unchanged calculations.
 
 ## Outputs and scope
 
-- `outputs/ideal_verification/`: random circuit cases, parity plots, and numerical verification.
-- `outputs/memory_robustness/`: noise sweeps, coherence-ratio figure, simulated shots, and planning estimates.
-- `outputs/survival_curves/` and `outputs/fig2b_saturation/`: explanatory plots and large-memory limits.
-- `outputs/zeno_panel_a.*`, `outputs/zeno_panel_b.*`, and `outputs/zeno_clock_basis.*`: paper-panel exports and retained snapshots.
-- `outputs/notebooks/`: five HTML reading copies.
-- Root `fig1`-`fig5` exports: figures from the timing/resource notebook. Other root images and some older outputs are preserved snapshots, not all regenerated by current cells.
-- [Package inventory](artifact_inventory.json): files, checksums, notebook checks, and provenance.
+- `outputs/ideal_verification/` contains random circuit cases, parity plots, and numerical verification.
+- `outputs/memory_robustness/` contains noise sweeps, the coherence-ratio figure, simulated shots, and planning estimates.
+- `outputs/survival_curves/` and `outputs/fig2b_saturation/` contain explanatory plots and large-memory limits.
+- `outputs/zeno_panel_a.*`, `outputs/zeno_panel_b.*`, and `outputs/zeno_clock_basis.*` are paper-panel exports and retained snapshots.
+- `outputs/notebooks/` contains five HTML reading copies.
+- Root `fig1`-`fig5` exports are figures from the timing/resource notebook. Other root images and some older outputs are preserved snapshots, not all regenerated by current cells.
+- The [package inventory](artifact_inventory.json) lists files, checksums, notebook checks, and provenance.
 
-This package was copied from the `relational-zeno-predictions` working tree on 2026-11-11. Notebook code and saved computational outputs are preserved; prose links to the absent manuscript were changed to plain text and HTML copies were regenerated. Manuscript folders, private notes, correspondence, environments, and repository history are excluded. The ideal verification notebook optionally records a manuscript-source hash when that file exists; its absence does not affect the calculation. Any source hash in an existing saved summary records the original execution context.
+This package was copied from the `relational-zeno-predictions` working tree on 2026-11-11. Notebook code and saved computational outputs are preserved. Prose links to the absent manuscript were changed to plain text, prose punctuation was revised, and HTML copies were regenerated. Manuscript folders, private notes, correspondence, environments, and repository history are excluded. The ideal verification notebook optionally records a manuscript-source hash when that file exists. Its absence does not affect the calculation. Any source hash in an existing saved summary records the original execution context.
 
-In the memory-noise notebook, system and schedule-qubit decoherence, imperfect gates, heating, drift, routing overhead, and correlated errors are excluded. Its values are illustrative model assumptions rather than measured processor calibration. The separate timing notebook does not combine these effects into a complete device simulation. Parity alone is not a general entanglement witness; asymmetric or correlated readout can also alter the control baseline.
+In the memory-noise notebook, system and schedule-qubit decoherence, imperfect gates, heating, drift, routing overhead, and correlated errors are excluded. Its values are illustrative model assumptions rather than measured processor calibration. The separate timing notebook does not combine these effects into a complete device simulation. Parity alone is not a general entanglement witness. Asymmetric or correlated readout can also alter the control baseline.
 
-The older notebooks call the schedule qubit `C`; the newer ones call it `Q`. A history-clock register in the tomography estimate is a separate object. The zero-offset reference is a separate run. Manuscript equation labels retained in prose are contextual references, not local file links.
+The older notebooks call the schedule qubit `C`, and the newer ones call it `Q`. A history-clock register in the tomography estimate is a separate object. The zero-offset reference is a separate run. Manuscript equation labels retained in prose are contextual references, not local file links.

@@ -7729,7 +7729,7 @@ norms: 1.0 1.0  T_tot = 2.0999999999999996
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="2.-Check-schedule-visibility">2. Check schedule visibility<a class="anchor-link" href="#2.-Check-schedule-visibility">¶</a></h2><p>Visibility measures the overlap between the two complete branch states:</p>
+<h2 id="2.-Check-schedule-visibility">2. Check schedule visibility<a class="anchor-link" href="#2.-Check-schedule-visibility">¶</a></h2><p>Visibility measures the overlap between the two complete branch states.</p>
 <p>$$\mathcal V=|\langle\psi^{\mathcal B}_{SM}|\psi^{\mathcal A}_{SM}\rangle|=\cos^2(\Omega\delta/2).$$</p>
 <p>For this ideal circuit, it depends on the offset but not the number or spacing of records. We also compare with $\cos^{2N}(\Omega\delta/2)$ to check that adding one factor per record gives the wrong result.</p>
 </div>
@@ -7821,7 +7821,7 @@ max |&lt;B|A&gt; - cos^2N(Omega*delta/2)|    = 4.794e-01   &lt;-- naive guess, f
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Vary-the-number-of-records">Vary the number of records<a class="anchor-link" href="#Vary-the-number-of-records">¶</a></h3><p>Hold the offset fixed and change the number and spacing of records. Then turn recording off: the branches should agree and visibility should return to one.</p>
+<h3 id="Vary-the-number-of-records">Vary the number of records<a class="anchor-link" href="#Vary-the-number-of-records">¶</a></h3><p>Hold the offset fixed and change the number and spacing of records. Then turn recording off. The branches should agree and visibility should return to one.</p>
 </div>
 </div>
 </div>
@@ -7900,11 +7900,11 @@ CNOTs disabled (baseline calibration): V = 1.000000000000  (expect exactly 1)
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="3.-Formulas-for-the-two-schedule-groups">3. Formulas for the two schedule groups<a class="anchor-link" href="#3.-Formulas-for-the-two-schedule-groups">¶</a></h2><p>With the schedule qubit in $|\chi\rangle_C=\tfrac{1}{\sqrt2}(|A\rangle_C+|B\rangle_C)$ and read in
-$|\pm\rangle_C=\tfrac{1}{\sqrt2}(|A\rangle_C\pm|B\rangle_C)$:</p>
+<h2 id="3.-Formulas-for-the-two-schedule-groups">3. Formulas for the two schedule groups<a class="anchor-link" href="#3.-Formulas-for-the-two-schedule-groups">¶</a></h2><p>For a schedule qubit prepared in $|\chi\rangle_C=\tfrac{1}{\sqrt2}(|A\rangle_C+|B\rangle_C)$ and read in
+$|\pm\rangle_C=\tfrac{1}{\sqrt2}(|A\rangle_C\pm|B\rangle_C)$, we obtain</p>
 <p>$$p_\pm=\tfrac12(1\pm\mathcal{V}),\qquad
 P_0^{(N,\pm)}=\frac{P_0^{\mathcal{A}}+P_0^{\mathcal{B}}\pm2\,\mathrm{Re}\langle\psi^{\mathcal{B}}|\hat P_0|\psi^{\mathcal{A}}\rangle}{2(1\pm\mathcal{V})}$$</p>
-<p>and the paper's closed forms, with $c\equiv\cos(\Omega\Delta t)$ and $\gamma^{2}\equiv\cos^{2}(\Omega\delta/2)$:</p>
+<p>The paper's closed forms, with $c\equiv\cos(\Omega\Delta t)$ and $\gamma^{2}\equiv\cos^{2}(\Omega\delta/2)$, are</p>
 <p>$$P_0^{\mathcal{A}}=\tfrac12\bigl[1+c^{N}\cos(\Omega\delta)\bigr],\qquad
 P_0^{\mathcal{B}}=\tfrac12\bigl[1+c^{N-1}\cos(\Omega(\Delta t+\delta))\bigr],$$</p>
 <p>$$\boxed{P_0^{(N,-)}=\tfrac12\bigl[1-c^{N}\bigr]}\qquad
@@ -8001,7 +8001,7 @@ P_0^{(N,+)}=\tfrac12+\frac{c^{N}\gamma^{2}+c^{N-1}\cos(\Omega(\Delta t+\delta))}
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="4.-Compare-minus-shots-with-the-reference">4. Compare minus shots with the reference<a class="anchor-link" href="#4.-Compare-minus-shots-with-the-reference">¶</a></h2><p>The system survival in the minus group is the complement of a separate zero-offset reference run:</p>
+<h2 id="4.-Compare-minus-shots-with-the-reference">4. Compare minus shots with the reference<a class="anchor-link" href="#4.-Compare-minus-shots-with-the-reference">¶</a></h2><p>The system survival in the minus group is the complement of a separate zero-offset reference run.</p>
 <p>$$P_0^{(N,-)}(T)=1-P_0^{(N)}(T).$$</p>
 <p>Ignoring the schedule result in the offset run instead gives $(P_0^A+P_0^B)/2$. That is a different curve, with large-$N$ limit $V$. The reference tends to one while the minus curve tends to zero.</p>
 </div>
@@ -8066,7 +8066,7 @@ the 'sum' column is 1.000000 to machine precision -&gt; complement relation agre
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="5.-Choose-the-offset">5. Choose the offset<a class="anchor-link" href="#5.-Choose-the-offset">¶</a></h2><p>A small offset gives very few minus shots: $p_-=\tfrac12\sin^2(\Omega\delta/2)$. At $\Omega\delta=\pi$, plus and minus are equally common, but their system-survival curves coincide.</p>
+<h2 id="5.-Choose-the-offset">5. Choose the offset<a class="anchor-link" href="#5.-Choose-the-offset">¶</a></h2><p>A small offset gives very few minus shots because $p_-=\tfrac12\sin^2(\Omega\delta/2)$. At $\Omega\delta=\pi$, plus and minus are equally common, but their system-survival curves coincide.</p>
 <p>At $\Omega\delta=\pi/2$, one quarter of the shots are minus. The table shows how the shot fraction and the separation between the two system-survival curves change with offset.</p>
 </div>
 </div>
@@ -8128,7 +8128,7 @@ the 'sum' column is 1.000000 to machine precision -&gt; complement relation agre
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="6.-Draw-the-paper-panels">6. Draw the paper panels<a class="anchor-link" href="#6.-Draw-the-paper-panels">¶</a></h2><p>Panel (a) varies the number of records. Panel (b) varies the offset. We save each as a PDF and PNG in <code>outputs/</code>.</p>
-<p>Each panel is 3.404 inches wide with 10-point text to match one manuscript column. Keep the fixed canvas size when exporting; LaTeX adds the panel letters.</p>
+<p>Each panel is 3.404 inches wide with 10-point text to match one manuscript column. Keep the fixed canvas size when exporting. LaTeX adds the panel letters.</p>
 </div>
 </div>
 </div>
@@ -8277,7 +8277,7 @@ wrote outputs/zeno_panel_b.pdf
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Compare-points-with-curves">Compare points with curves<a class="anchor-link" href="#Compare-points-with-curves">¶</a></h3><p>Overlay exact circuit values on the formulas. The legend retains an equation number from an earlier draft; this is the complement relation.</p>
+<h3 id="Compare-points-with-curves">Compare points with curves<a class="anchor-link" href="#Compare-points-with-curves">¶</a></h3><p>Overlay exact circuit values on the formulas. The legend retains an equation number from an earlier draft. It refers to the complement relation.</p>
 </div>
 </div>
 </div>
@@ -8351,7 +8351,7 @@ max |sim - cos^2(Omega delta/2)| for V: 4.663e-15
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="What-this-calculation-covers">What this calculation covers<a class="anchor-link" href="#What-this-calculation-covers">¶</a></h2><p>The two schedule branches are simulated separately. The <a href="../../ideal_circuit_verification.ipynb">verification notebook</a> also checks the circuit with an explicit schedule qubit and independent full matrices.</p>
-<p>This notebook assumes ideal gates and no noise. The <a href="../../memory_parity_robustness.ipynb">memory-noise notebook</a> studies a limited noise model; neither is a full hardware prediction. Numerical agreement checks the formulas, while their derivation belongs in the manuscript.</p>
+<p>This notebook assumes ideal gates and no noise. The <a href="../../memory_parity_robustness.ipynb">memory-noise notebook</a> studies a limited noise model. Neither notebook is a full hardware prediction. Numerical agreement checks the formulas, while their derivation belongs in the manuscript.</p>
 </div>
 </div>
 </div>

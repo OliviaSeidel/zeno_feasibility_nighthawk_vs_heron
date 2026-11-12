@@ -7519,7 +7519,7 @@ a.anchor-link {
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h1 id="Checking-visibility,-system-survival,-and-memory-parity">Checking visibility, system survival, and memory parity<a class="anchor-link" href="#Checking-visibility,-system-survival,-and-memory-parity">¶</a></h1><p>We build the circuit gate by gate, read its probabilities, and compare them with the formulas in the manuscript. The circuit calculation does not use those formulas to generate its answers.</p>
 <p>We test both schedule outcomes, equal and unequal gaps between records, and a dephased schedule. A separate matrix calculation checks the simulator itself.</p>
-<p>Everything here is ideal and noiseless. See <a href="../../memory_parity_robustness.ipynb">Memory parity with noise</a> for relaxation, dephasing, and readout errors. Run from top to bottom; results go in <code>outputs/ideal_verification/</code>. No quantum hardware or account is needed.</p>
+<p>Everything here is ideal and noiseless. See <a href="../../memory_parity_robustness.ipynb">Memory parity with noise</a> for relaxation, dephasing, and readout errors. Run from top to bottom. Results go in <code>outputs/ideal_verification/</code>. No quantum hardware or account is needed.</p>
 </div>
 </div>
 </div>
@@ -7640,7 +7640,7 @@ Absolute tolerance: 2e-10
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="2.-Build-the-gates">2. Build the gates<a class="anchor-link" href="#2.-Build-the-gates">¶</a></h2><p>A state vector stores one complex amplitude for each bit string. We use the order $Q,S,M_1,\ldots,M_N$, with $Q$ on the left. Qubit numbers in the code start at zero.</p>
-<p>A rotation mixes the amplitudes for system zero and system one. A CNOT swaps a memory’s zero and one amplitudes only when the system is one. These functions act on amplitudes; they do not contain the visibility, complement, or parity formulas.</p>
+<p>A rotation mixes the amplitudes for system zero and system one. A CNOT swaps a memory’s zero and one amplitudes only when the system is one. These functions act on amplitudes. They do not contain the visibility, complement, or parity formulas.</p>
 </div>
 </div>
 </div>
@@ -7712,8 +7712,8 @@ Absolute tolerance: 2e-10
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="3.-Read-out-the-circuit">3. Read out the circuit<a class="anchor-link" href="#3.-Read-out-the-circuit">¶</a></h2><p>A Hadamard on $Q$ turns its plus/minus measurement into an ordinary zero/one readout: zero means plus, and one means minus.</p>
-<p>To measure memory <strong>X parity</strong>, we also apply a Hadamard to each memory. Each measured zero contributes $+1$ and each measured one contributes $-1$. Multiplying those signs gives $-1$ when an odd number of memories read one. Thus, parity $-1$ means every selected shot has odd parity; it does not mean that every memory reads one.</p>
+<h2 id="3.-Read-out-the-circuit">3. Read out the circuit<a class="anchor-link" href="#3.-Read-out-the-circuit">¶</a></h2><p>A Hadamard on $Q$ turns its plus/minus measurement into an ordinary zero/one readout. Zero means plus, and one means minus.</p>
+<p>To measure memory <strong>X parity</strong>, we also apply a Hadamard to each memory. Each measured zero contributes $+1$ and each measured one contributes $-1$. Multiplying those signs gives $-1$ when an odd number of memories read one. Thus, parity $-1$ means every selected shot has odd parity. It does not mean that every memory reads one.</p>
 <p>We calculate the probabilities of all bit strings after those gates. We also calculate parity directly from the X operator as a second check. A group with probability below the stated cutoff is reported as undefined, rather than divided by a nearly zero number.</p>
 </div>
 </div>
@@ -8018,8 +8018,8 @@ Largest amplitude difference: 4.441e-16
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="7.-Try-many-randomly-chosen-parameters">7. Try many randomly chosen parameters<a class="anchor-link" href="#7.-Try-many-randomly-chosen-parameters">¶</a></h2><p>We test 600 circuits: 30 equally spaced and 30 unevenly spaced sequences for each $N=1,\ldots,10$. Within a run, $\Omega$ stays constant and both schedules use the same interval list. We vary the total drive angle from 0.02 to 20 radians, so the sample includes both small rotations and substantial evolution.</p>
-<p>For the uneven cases, random positive fractions split the total time. Some sequences are nearly balanced; others put most of the time into one or two gaps. With one recording there is only one interval, so “uneven” makes no distinction at $N=1$.</p>
+<h2 id="7.-Try-many-randomly-chosen-parameters">7. Try many randomly chosen parameters<a class="anchor-link" href="#7.-Try-many-randomly-chosen-parameters">¶</a></h2><p>We test 600 circuits, consisting of 30 equally spaced and 30 unevenly spaced sequences for each $N=1,\ldots,10$. Within a run, $\Omega$ stays constant and both schedules use the same interval list. We vary the total drive angle from 0.02 to 20 radians, so the sample includes both small rotations and substantial evolution.</p>
+<p>For the uneven cases, random positive fractions split the total time. Some sequences are nearly balanced, while others put most of the time into one or two gaps. With one recording there is only one interval, so “uneven” makes no distinction at $N=1$.</p>
 <p>The offset angle ranges from 0.05 to $2\pi-0.05$. We deliberately check zero and very small offsets separately below. The random seed is fixed, and the saved table contains every interval, so the test can be repeated exactly. Numerical agreement is a check of the algebra, not a replacement for its proof.</p>
 </div>
 </div>
@@ -8236,7 +8236,7 @@ Largest amplitude difference: 4.441e-16
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="9.-Compare-coherent-and-dephased-schedules">9. Compare coherent and dephased schedules<a class="anchor-link" href="#9.-Compare-coherent-and-dephased-schedules">¶</a></h2><p>A dephased schedule has no interference between A and B. We represent it as a 50/50 mixture of two actual circuit runs, one prepared in A and one in B. We add their probabilities, not their amplitudes. This is exactly the result of completely dephasing $Q$ in the schedule basis before the final Hadamard.</p>
-<p>For this control, both plus and minus groups should have zero mean X parity. Zero mean means equal probabilities of even and odd parity. A classical random choice of schedule gives the same memory mixture; without a physical schedule qubit there is no plus/minus label to condition on.</p>
+<p>For this control, both plus and minus groups should have zero mean X parity. Zero mean means equal probabilities of even and odd parity. A classical random choice of schedule gives the same memory mixture. Without a physical schedule qubit there is no plus/minus label to condition on.</p>
 <p>In the coherent case, the minus group should stay at $-1$. The plus group varies with the offset and equals $p_-/p_+$. This is why checking both groups matters.</p>
 </div>
 </div>
@@ -8318,7 +8318,7 @@ Largest amplitude difference: 4.441e-16
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="10.-Check-boundaries-and-very-rare-minus-outcomes">10. Check boundaries and very rare minus outcomes<a class="anchor-link" href="#10.-Check-boundaries-and-very-rare-minus-outcomes">¶</a></h2><p>We now test cases the random sample does not hit exactly: zero delay, a full-turn delay, a half-turn delay, no drive, and intervals of zero length. Zero-length intervals are mathematical boundary checks, not a proposed hardware schedule.</p>
+<h2 id="10.-Check-boundaries-and-very-rare-minus-outcomes">10. Check boundaries and very rare minus outcomes<a class="anchor-link" href="#10.-Check-boundaries-and-very-rare-minus-outcomes">¶</a></h2><p>We now test cases the random sample does not hit exactly, including zero delay, a full-turn delay, a half-turn delay, no drive, and intervals of zero length. Zero-length intervals are mathematical boundary checks, not a proposed hardware schedule.</p>
 <p>We also disable all recording CNOTs. Then the two branches are the same rotations in a different order, so visibility must return to one. The visibility formula is not the prediction for this no-recording control. With no memories at all, memory parity is not a witness, so we do not apply the parity claim to that case.</p>
 <p>Finally, we make the delay very small. Below our probability cutoff, we still test joint probabilities but leave conditional quantities undefined. This avoids claiming a measured minus-state property when there are effectively no minus events to normalize.</p>
 </div>
@@ -8509,8 +8509,8 @@ Largest amplitude difference: 4.441e-16
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="11.-What-would-the-bit-strings-look-like?">11. What would the bit strings look like?<a class="anchor-link" href="#11.-What-would-the-bit-strings-look-like?">¶</a></h2><p>The exact probabilities already test the prediction. This last example makes the parity statement easier to read as an experiment: we draw 20,000 simulated shots from the full joint readout distribution of the three-memory example.</p>
-<p>The minus group should contain only odd-parity memory strings. The plus group contains both kinds; its measured average fluctuates around $1/3$. This is sampling from the ideal calculation, not hardware data or a noise model.</p>
+<h2 id="11.-What-would-the-bit-strings-look-like?">11. What would the bit strings look like?<a class="anchor-link" href="#11.-What-would-the-bit-strings-look-like?">¶</a></h2><p>The exact probabilities already test the prediction. To make the parity statement easier to read as an experiment, we draw 20,000 simulated shots from the full joint readout distribution of the three-memory example.</p>
+<p>The minus group should contain only odd-parity memory strings. The plus group contains both kinds, and its measured average fluctuates around $1/3$. This is sampling from the ideal calculation, not hardware data or a noise model.</p>
 </div>
 </div>
 </div>
@@ -8647,7 +8647,7 @@ Largest amplitude difference: 4.441e-16
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="12.-Save-the-results">12. Save the results<a class="anchor-link" href="#12.-Save-the-results">¶</a></h2><p>We save every random test case and a short summary so the checks can be repeated. Passing them shows agreement with the ideal formulas. It does not tell us how much contrast survives hardware noise; the <a href="../../memory_parity_robustness.ipynb">noise notebook</a> studies that separately.</p>
+<h2 id="12.-Save-the-results">12. Save the results<a class="anchor-link" href="#12.-Save-the-results">¶</a></h2><p>We save every random test case and a short summary so the checks can be repeated. Passing them shows agreement with the ideal formulas. It does not tell us how much contrast survives hardware noise. The <a href="../../memory_parity_robustness.ipynb">noise notebook</a> studies that separately.</p>
 </div>
 </div>
 </div>
@@ -8725,7 +8725,7 @@ Largest amplitude difference: 4.441e-16
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="Model-and-sources">Model and sources<a class="anchor-link" href="#Model-and-sources">¶</a></h2><p>The manuscript (not included in this analysis package) gives the visibility formula (<code>eq:visibility</code>), the complement relation (<code>eq:antizeno</code>), and the parity prediction after <code>eq:plusbranch</code>. These labels stay useful when equation numbers change.</p>
-<p>The system and memories start in zero. Both schedules use the same intervals and a constant X drive, with ideal CNOT recording gates. These are ordinary quantum-circuit predictions; they do not distinguish a relational description of time from an external one.</p>
+<p>The system and memories start in zero. Both schedules use the same intervals and a constant X drive, with ideal CNOT recording gates. These are ordinary quantum-circuit predictions. They do not distinguish a relational description of time from an external one.</p>
 </div>
 </div>
 </div>

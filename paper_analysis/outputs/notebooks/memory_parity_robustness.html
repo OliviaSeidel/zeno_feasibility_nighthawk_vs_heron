@@ -7519,7 +7519,7 @@ a.anchor-link {
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h1 id="Memory-parity-with-relaxation,-dephasing,-and-readout-errors">Memory parity with relaxation, dephasing, and readout errors<a class="anchor-link" href="#Memory-parity-with-relaxation,-dephasing,-and-readout-errors">¶</a></h1><p>A memory can relax toward zero, lose phase coherence, or be misread. Here we add those errors to the <a href="../../ideal_circuit_verification.ipynb">ideal circuit</a> and see how much parity contrast survives.</p>
 <p>We compare both schedule groups with a dephased-schedule control.  tables and figures go in <code>outputs/memory_robustness/</code>.</p>
-<p><strong>Assumptions:</strong> the noise values are examples rather than actual device calibrations. The system and schedule qubits, drive, and gates are otherwise ideal. We leave out noise during a memory's recording gate, heating, drift, routing overhead, and correlated errors.</p>
+<p><strong>Assumptions.</strong> The noise values are examples rather than actual device calibrations. The system and schedule qubits, drive, and gates are otherwise ideal. We leave out noise during a memory's recording gate, heating, drift, routing overhead, and correlated errors.</p>
 </div>
 </div>
 </div>
@@ -7530,7 +7530,7 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="1.-Choose-an-example">1. Choose an example<a class="anchor-link" href="#1.-Choose-an-example">¶</a></h2><p>We use six memories, total drive angle $\Omega T=3$, and offset angle $\alpha=\Omega\delta=\pi/2$. Ideally, one quarter of the shots are minus shots. Their mean memory parity is −1; the plus group's mean is $1/3$.</p>
+<h2 id="1.-Choose-an-example">1. Choose an example<a class="anchor-link" href="#1.-Choose-an-example">¶</a></h2><p>We use six memories, total drive angle $\Omega T=3$, and offset angle $\alpha=\Omega\delta=\pi/2$. Ideally, one quarter of the shots are minus shots. Their mean memory parity is −1, and the plus group's mean is $1/3$.</p>
 <p>All times below are in microseconds. A 50 kHz drive gives a 9.55 μs recording train. Each offset rotation takes 5 μs, each recording takes 0.18 μs, and the final wait is 0.2 μs. These are editable timing assumptions.</p>
 <p>We choose $T_1=100$ μs and pure-dephasing time $T_\phi=150$ μs.</p>
 <p>$$\frac{1}{T_2}=\frac{1}{2T_1}+\frac{1}{T_\phi}.$$</p>
@@ -7628,7 +7628,7 @@ Python 3.9.6 NumPy 2.0.2 Matplotlib 3.9.4
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="2.-Build-the-circuit">2. Build the circuit<a class="anchor-link" href="#2.-Build-the-circuit">¶</a></h2><p>The qubit order is $Q,S,M_1,\ldots,M_N$: schedule, system, then memories. Schedule B gets the extra system rotation first; schedule A gets it last. Each rotation in the recording train is followed by a CNOT into a fresh memory.</p>
+<h2 id="2.-Build-the-circuit">2. Build the circuit<a class="anchor-link" href="#2.-Build-the-circuit">¶</a></h2><p>The qubit order is $Q,S,M_1,\ldots,M_N$, representing the schedule, system, then memories. Schedule B gets the extra system rotation first, and schedule A gets it last. Each rotation in the recording train is followed by a CNOT into a fresh memory.</p>
 <p>The gate functions are copied from the ideal notebook so this file runs on its own. They act on amplitudes and contain no parity formula. We keep $S$ until the circuit is built, then trace it out because we read only $Q$ and the memories.</p>
 </div>
 </div>
@@ -7702,7 +7702,7 @@ Python 3.9.6 NumPy 2.0.2 Matplotlib 3.9.4
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="3.-Count-each-memory's-waiting-time">3. Count each memory's waiting time<a class="anchor-link" href="#3.-Count-each-memory's-waiting-time">¶</a></h2><p>A memory starts storing its record when its CNOT finishes. Earlier memories wait through more rotations and recording gates. Every memory also waits through the final offset gate and the last idle time.</p>
-<p>Both branches share one laboratory gate schedule. We treat each CNOT as ideal and place it at the end of its time slot. Older memories decay during that slot; noise on the memory currently being recorded is omitted. The final basis rotations are instantaneous here. Readout errors are mistakes in the reported bit, not extra waiting time.</p>
+<p>Both branches share one laboratory gate schedule. We treat each CNOT as ideal and place it at the end of its time slot. Older memories decay during that slot. Noise on the memory currently being recorded is omitted. The final basis rotations are instantaneous here. Readout errors are mistakes in the reported bit, not extra waiting time.</p>
 </div>
 </div>
 </div>
@@ -7795,7 +7795,7 @@ Python 3.9.6 NumPy 2.0.2 Matplotlib 3.9.4
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="4.-Let-the-memories-decay">4. Let the memories decay<a class="anchor-link" href="#4.-Let-the-memories-decay">¶</a></h2><p>A density matrix tracks the mixture of states caused by noise. In time $\tau$, relaxation transfers a fraction $\gamma=1-e^{-\tau/T_1}$ of the excited population to zero. Coherence shrinks by $e^{-\tau/T_2}$:</p>
+<h2 id="4.-Let-the-memories-decay">4. Let the memories decay<a class="anchor-link" href="#4.-Let-the-memories-decay">¶</a></h2><p>A density matrix tracks the mixture of states caused by noise. In time $\tau$, relaxation transfers a fraction $\gamma=1-e^{-\tau/T_1}$ of the excited population to zero. Coherence shrinks by $e^{-\tau/T_2}$, giving the following update.</p>
 <p>$$\rho\mapsto\begin{pmatrix}
 \rho_{00}+\gamma\rho_{11} &amp; e^{-\tau/T_2}\rho_{01}\\
 e^{-\tau/T_2}\rho_{10} &amp; (1-\gamma)\rho_{11}
@@ -7878,7 +7878,7 @@ e^{-\tau/T_2}\rho_{10} &amp; (1-\gamma)\rho_{11}
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="5.-Add-readout-mistakes">5. Add readout mistakes<a class="anchor-link" href="#5.-Add-readout-mistakes">¶</a></h2><p>For each bit, $e_{01}$ means reporting 1 when the true result is 0; $e_{10}$ means the reverse. In the assignment matrix, rows are reported bits and columns are true bits.</p>
+<h2 id="5.-Add-readout-mistakes">5. Add readout mistakes<a class="anchor-link" href="#5.-Add-readout-mistakes">¶</a></h2><p>For each bit, $e_{01}$ means reporting 1 when the true result is 0, and $e_{10}$ means the reverse. In the assignment matrix, rows are reported bits and columns are true bits.</p>
 <p>We rotate into the X basis, apply readout errors to the joint probabilities, and then select the reported plus or minus group. A misread memory bit flips parity. A misread schedule bit puts a shot in the wrong group.</p>
 <p>The main plots use independent, symmetric errors. Later we also check unequal error directions.</p>
 </div>
@@ -7949,7 +7949,7 @@ e^{-\tau/T_2}\rho_{10} &amp; (1-\gamma)\rho_{11}
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="6.-Check-the-noise-code">6. Check the noise code<a class="anchor-link" href="#6.-Check-the-noise-code">¶</a></h2><p>We compare the matrix update with a separate Kraus-operator calculation on random states. Both should give the same valid density matrix: Hermitian, trace one, and no negative eigenvalues beyond rounding.</p>
+<h2 id="6.-Check-the-noise-code">6. Check the noise code<a class="anchor-link" href="#6.-Check-the-noise-code">¶</a></h2><p>We compare the matrix update with a separate Kraus-operator calculation on random states. Both should give the same valid density matrix, which is Hermitian, has trace one, and has no negative eigenvalues beyond rounding.</p>
 <p>We also check simple limits. Excited population should decay as $e^{-\tau/T_1}$, and X coherence as $e^{-\tau/T_2}$. A readout check makes sure the two error directions are not swapped.</p>
 </div>
 </div>
@@ -8248,7 +8248,7 @@ Population decay, coherence decay, and readout orientation checks passed.
 <p>Let $a$ be the chance of reporting minus for a true plus shot, and $b$ the reverse. Then</p>
 <p>$$m_{-,\mathrm{reported}}=-CR\frac{p_-(1-a-b)}{(1-b)p_-+ap_+}.$$</p>
 <p>The denominator includes wrongly sorted plus shots. Treating the schedule bit as one more parity bit misses this change. We check the formula against the density-matrix result.</p>
-<p>We also check that memory-only noise leaves the reduced state of $Q$ unchanged. This applies after the memories stop interacting; it does not say that gate errors or noise on $Q$ are harmless.</p>
+<p>We also check that memory-only noise leaves the reduced state of $Q$ unchanged. This applies after the memories stop interacting. It does not say that gate errors or noise on $Q$ are harmless.</p>
 </div>
 </div>
 </div>
@@ -8470,7 +8470,7 @@ Largest change in the reduced Q state: 2.776e-16
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="11.-Vary-waiting-time-and-readout-quality">11. Vary waiting time and readout quality<a class="anchor-link" href="#11.-Vary-waiting-time-and-readout-quality">¶</a></h2><p>The left panel varies the final wait and memory $T_2$. It keeps $T_1=200$ μs, so all plotted values obey $T_2\le2T_1$. The right panel varies memory and schedule readout errors separately.</p>
-<p>These larger grids use the formula we just checked. We also verify several grid points directly with the density matrix. Contour labels show the magnitude of minus parity; they are not hardware requirements.</p>
+<p>These larger grids use the formula we just checked. We also verify several grid points directly with the density matrix. Contour labels show the magnitude of minus parity. They are not hardware requirements.</p>
 </div>
 </div>
 </div>
@@ -8613,7 +8613,7 @@ Largest change in the reduced Q state: 2.776e-16
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="13.-Try-uneven-intervals-and-unequal-readout-errors">13. Try uneven intervals and unequal readout errors<a class="anchor-link" href="#13.-Try-uneven-intervals-and-unequal-readout-errors">¶</a></h2><p>We now vary the gaps, memory lifetimes, and both error directions. The full probability calculation still works, although the simple symmetric-readout factor no longer applies.</p>
 <p>The dephased control has uniform ideal X-basis memory strings. Independent asymmetric readout gives it mean parity $\prod_k(e_{10,k}-e_{01,k})$, so its measured baseline need not be zero.</p>
-<p>We also check zero noise, complete phase loss, random readout, and zero offset. At zero offset there are no true minus shots; any reported minus shots are sorting mistakes.</p>
+<p>We also check zero noise, complete phase loss, random readout, and zero offset. At zero offset there are no true minus shots, so any reported minus shots are sorting mistakes.</p>
 </div>
 </div>
 </div>
@@ -8898,14 +8898,14 @@ Zero-noise, phase-loss, random-detector, and zero-offset checks passed.
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="15.-Compare-memory-storage-with-coherence-time">15. Compare memory storage with coherence time<a class="anchor-link" href="#15.-Compare-memory-storage-with-coherence-time">¶</a></h2><p>How short must the storage times be to retain the ideal parity? Here we isolate memory relaxation and dephasing: <strong>memory and schedule readout are perfect</strong>, and the system, schedule qubit, and gates remain ideal. The earlier figures keep the separate readout penalties.</p>
-<p>For each memory count, we keep the drive angles and all gate timings fixed and vary the common memory coherence time $T_2$. The horizontal axis is $r=\tau_{\max}/T_2$, where $\tau_{\max}=\max_k\tau_k$ is the <strong>longest memory storage time</strong>: from completion of the first recording CNOT to the memory basis rotations. It is not the total circuit duration. We set $T_1=T_\phi=3T_2/2$, consistent with $1/T_2=1/(2T_1)+1/T_\phi$.</p>
+<h2 id="15.-Compare-memory-storage-with-coherence-time">15. Compare memory storage with coherence time<a class="anchor-link" href="#15.-Compare-memory-storage-with-coherence-time">¶</a></h2><p>How short must the storage times be to retain the ideal parity? Here we isolate memory relaxation and dephasing. <strong>Memory and schedule readout are perfect</strong>, and the system, schedule qubit, and gates remain ideal. The earlier figures keep the separate readout penalties.</p>
+<p>For each memory count, we keep the drive angles and all gate timings fixed and vary the common memory coherence time $T_2$. The horizontal axis is $r=\tau_{\max}/T_2$, where $\tau_{\max}=\max_k\tau_k$ is the <strong>longest memory storage time</strong>, measured from completion of the first recording CNOT to the memory basis rotations. It is not the total circuit duration. We set $T_1=T_\phi=3T_2/2$, consistent with $1/T_2=1/(2T_1)+1/T_\phi$.</p>
 <p>With perfect readout, the minus-group mean is</p>
 <p>$$\langle\hat\Sigma_M\rangle_-=-\exp\!\left(-\sum_k\tau_k/T_2\right)
 =-\exp\!\left(-r\sum_k\tau_k/\tau_{\max}\right).$$</p>
-<p>The ideal value is $-1$ at infinite coherence ($r=0$), and the matched dephased-schedule control remains zero under these memory channels. The finite-coherence curves stay negative but approach zero as storage becomes long compared with coherence. More memories accumulate more exposure: keeping each storage time short is not enough for near-ideal parity unless <strong>their sum is also small compared with $T_2$</strong>.</p>
-<p>Solid curves use the checked formula; circles independently use the circuit density matrix. All are model expectations, not measured data. Separation from this matched control tests the predicted record correlations; parity alone does not certify the full state or exclude every alternative preparation. Asymmetric or correlated readout can change the control baseline.</p>
-<p>The paper-sized PDF and PNG are saved as <code>outputs/memory_robustness/parity_coherence_ratio.*</code>; the values and checks are saved beside them. The paper uses a selected copy of this export.</p>
+<p>The ideal value is $-1$ at infinite coherence ($r=0$), and the matched dephased-schedule control remains zero under these memory channels. The finite-coherence curves stay negative but approach zero as storage becomes long compared with coherence. More memories accumulate more exposure. Keeping each storage time short is not enough for near-ideal parity unless <strong>their sum is also small compared with $T_2$</strong>.</p>
+<p>Solid curves use the checked formula, while circles independently use the circuit density matrix. All are model expectations, not measured data. Separation from this matched control tests the predicted record correlations. Parity alone does not certify the full state or exclude every alternative preparation. Asymmetric or correlated readout can change the control baseline.</p>
+<p>The paper-sized PDF and PNG are saved as <code>outputs/memory_robustness/parity_coherence_ratio.*</code>, with the values and checks saved beside them. The paper uses a selected copy of this export.</p>
 </div>
 </div>
 </div>
@@ -9259,10 +9259,10 @@ Results saved in outputs/memory_robustness
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="Sources">Sources<a class="anchor-link" href="#Sources">¶</a></h2><ul>
-<li><a href="../../ideal_circuit_verification.ipynb">Ideal circuit verification</a>: visibility, system survival, and both parity groups.</li>
-<li>Manuscript (not included in this analysis package): <code>eq:visibility</code>, <code>eq:antizeno</code>, and the parity discussion after <code>eq:plusbranch</code>.</li>
-<li><a href="https://quantum.cloud.ibm.com/docs/en/guides/build-noise-models">IBM Quantum noise guide</a>: quantum channels and classical readout errors.</li>
-<li><a href="https://qiskit.github.io/qiskit-aer/stubs/qiskit_aer.noise.thermal_relaxation_error.html">Qiskit Aer relaxation documentation</a>: relaxation parameters and $T_2\le2T_1$.</li>
+<li><a href="../../ideal_circuit_verification.ipynb">Ideal circuit verification</a> covers visibility, system survival, and both parity groups.</li>
+<li>The manuscript (not included in this analysis package) gives <code>eq:visibility</code>, <code>eq:antizeno</code>, and the parity discussion after <code>eq:plusbranch</code>.</li>
+<li>The <a href="https://quantum.cloud.ibm.com/docs/en/guides/build-noise-models">IBM Quantum noise guide</a> covers quantum channels and classical readout errors.</li>
+<li>The <a href="https://qiskit.github.io/qiskit-aer/stubs/qiskit_aer.noise.thermal_relaxation_error.html">Qiskit Aer relaxation documentation</a> covers relaxation parameters and $T_2\le2T_1$.</li>
 </ul>
 <p>The calculation uses explicit NumPy density matrices. Qiskit is not required.</p>
 </div>

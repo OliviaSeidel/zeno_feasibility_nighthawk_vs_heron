@@ -60,8 +60,11 @@
   "relative_markdown_links_checked": 23,
   "sara_notebook": {
     "path": "zeno_feasibility_nighthawk_vs_heron_paper_version.ipynb",
-    "sha256": "70a685ee36e7ff2ba873beb6c71831bf5f774959ee8e634f1af4e14cb848fc19",
-    "unchanged": true
+    "sha256": "850d56b971b7be7f066c9cfd80a6d9fe4e92cd0f7a5e9244dba368c6243b3334",
+    "unchanged": false,
+    "original_sha256": "70a685ee36e7ff2ba873beb6c71831bf5f774959ee8e634f1af4e14cb848fc19",
+    "code_and_computational_outputs_unchanged": true,
+    "changes": "Prose punctuation and sentence wording only"
   },
   "preserved_root_figures": [
     "Schedule_Ramsey_fringes_vs_delta.png",
@@ -85,8 +88,8 @@
   "files": [
     {
       "path": "README.md",
-      "bytes": 6082,
-      "sha256": "94effd08975b28cac77df484a3966661e51498a996432f58743bd251e4f3673c"
+      "bytes": 6275,
+      "sha256": "358b4de21b724f5f7a5d918b1d71a2425070acfa5803652622408ed74e795fd9"
     },
     {
       "path": "Schedule_Ramsey_fringes_vs_delta.png",
@@ -170,13 +173,13 @@
     },
     {
       "path": "ideal_circuit_verification.ipynb",
-      "bytes": 256629,
-      "sha256": "0fa9768b0b207dc554102eb41db6888cbe324c7b690e640a8264a9121a75bc4f"
+      "bytes": 256647,
+      "sha256": "07864cd57ce2523c6ecddeee88ac0a3188481da073de7cf2cfc71704752a88e2"
     },
     {
       "path": "memory_parity_robustness.ipynb",
-      "bytes": 478585,
-      "sha256": "653637efa9e3ea2dc5a60770fa23f9cd6ffdd5afc7d75469ae251f0e3b2915d5"
+      "bytes": 478714,
+      "sha256": "da9ba0c69857bf2f104153bbe2c18f262e04417686452f66e5974b4e7a425fbb"
     },
     {
       "path": "outputs/fig2b_saturation/fig2b_N_100.png",
@@ -325,28 +328,28 @@
     },
     {
       "path": "outputs/notebooks/ideal_circuit_verification.html",
-      "bytes": 633673,
-      "sha256": "b96f03bb52614ab218d7963221eee261f9b44449fb26d33a92bd3482580da5ee"
+      "bytes": 633691,
+      "sha256": "77554a2e0ed73bae8fc0b32035ad42995366d31b00fe1a3f3202e85f36c6acc6"
     },
     {
       "path": "outputs/notebooks/memory_parity_robustness.html",
-      "bytes": 934691,
-      "sha256": "ca54032949100a8f34d906f05ef88928ecbc764ecf796a55bbb272d0b783e9d9"
+      "bytes": 934820,
+      "sha256": "30fbd94e2c46445d62ed8541b832a21e24f0103e08c6fdfc3ce44dc4496a469e"
     },
     {
       "path": "outputs/notebooks/relational_zeno_analysis.html",
-      "bytes": 471625,
-      "sha256": "a31666789b4b54f093381875b32c67fdbe8692bf550076ecf39996e46f27de94"
+      "bytes": 471662,
+      "sha256": "7249fc4050e6dff6306aa07a8d87d7c8fc665bf3fa53d7e42f10bee41aa46b8b"
     },
     {
       "path": "outputs/notebooks/relational_zeno_realistic_predictions.html",
       "bytes": 523313,
-      "sha256": "7073a366281087d393325c08a40d4151e9fe06e5a06af10afc2b31fd59ece6f6"
+      "sha256": "096ea1a554936d65047688fcac4d698ebeb0366a313393bce8f8471b9ef37c5b"
     },
     {
       "path": "outputs/notebooks/understanding_survival_curves.html",
-      "bytes": 1351104,
-      "sha256": "e23437b5e2c9d8b09f1e7d479780cc39e1df9cb152ec08ed8e2e541b33b7c26e"
+      "bytes": 1351139,
+      "sha256": "627f2fd9d60cd05cdfaa36468e211be50cc9997349f02d80ddae2495cc2cc535"
     },
     {
       "path": "outputs/survival_curves/delta_sweep_low_n.png",
@@ -435,13 +438,13 @@
     },
     {
       "path": "relational_zeno_analysis.ipynb",
-      "bytes": 109819,
-      "sha256": "7aeae3e5f5ee389e48890bd3321c2a7884131813b464ddd7d8b7c79bdc40fcae"
+      "bytes": 109856,
+      "sha256": "6d72c633418b68f49ac98583c0ca0cee2e0721a05de0baed3c9e16b066ccebee"
     },
     {
       "path": "relational_zeno_realistic_predictions.ipynb",
       "bytes": 218894,
-      "sha256": "6c0c86fc7ccdd6caed5516f9c969f8c87f85cc1b2ac86361dfd674894f856670"
+      "sha256": "ffb1c3c54fa7cd4aa55ef0971df091d2322bb8970bfe9ef99365f3941f90835b"
     },
     {
       "path": "requirements.txt",
@@ -455,8 +458,8 @@
     },
     {
       "path": "understanding_survival_curves.ipynb",
-      "bytes": 959464,
-      "sha256": "36a41fe23cab9a5a9eda54a5aa7d119ace162ccdfcfc09928685e1fcd1bd034e"
+      "bytes": 959499,
+      "sha256": "22f4b617b659527e04699dc2997b05b1c9e7e3a6eac4e64bc29453f47c49ffd5"
     },
     {
       "path": "visibility_system_Q.png",
@@ -464,5 +467,11 @@
       "sha256": "e956dd13e007510af0d2a32cb1501d0ccb1ad07464998eb807c9b76d710599bf"
     }
   ],
-  "inventory_excludes_itself": true
+  "inventory_excludes_itself": true,
+  "prose_revision": {
+    "date": "2026-11-11",
+    "scope": "Notebook Markdown and README wording",
+    "code_and_saved_computational_outputs_unchanged": true,
+    "html_reading_copies_regenerated": true
+  }
 }
